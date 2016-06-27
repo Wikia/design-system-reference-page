@@ -46,10 +46,10 @@ $global-footer-social-icon-spacing: 20px;
 }
 
 .global-footer__license {
-	color: $color-white;
-	background: $color-night-sky;
-	display: flex;
 	align-items: center;
+	color: $color-white;
+	background: rgba($color-night-sky, 0.5);
+	display: flex;
 	justify-content: center;
 	min-height: 50px;
 	padding: 16px 20px;
