@@ -1,43 +1,6 @@
 .global-footer {
-	// columns
-	$desktop-column-fandom: 25%;
-	$desktop-column-wikia: 75%;
-	$desktop-first-column-width: 200px;
-	$desktop-second-column-width: 124px;
-	$desktop-third-column-width: 290px;
-	$desktop-fourth-column-width: 200px;
-
-	// rows
 	$en-logo-height: 26px;
-	$international-logo-height: 30px;
-
-	$desktop-row-header-en-margin-top: 47px;
-	$desktop-row-header-en-margin-bottom: 35px;
-	$desktop-row-header-en-height: $desktop-row-header-en-margin-top + $en-logo-height + $desktop-row-header-en-margin-bottom;
-
-	$desktop-row-header-international-padding-top: 43px;
-	$desktop-row-header-international-padding-bottom: 34px;
-	$desktop-row-header-international-height: $desktop-row-header-international-padding-top + $international-logo-height + $desktop-row-header-international-padding-bottom;
-
-	$mobile-row-header-en-fandom-margin-top: 38px;
-	$mobile-row-header-en-wikia-margin-top: 61px;
-	$mobile-row-header-en-margin-bottom: 29px;
-
-	$mobile-row-header-international-padding-top: 34px;
-	$mobile-row-header-international-padding-bottom: 35px;
-
 	$section-line-width: 4px;
-	$desktop-row-top-height: 205px + $section-line-width;
-	$desktop-row-bottom-height: 180px + $section-line-width;
-
-	$desktop-en-sections-height: $desktop-row-header-en-height + $desktop-row-top-height + $desktop-row-bottom-height;
-	$desktop-international-sections-height: $desktop-row-top-height + $desktop-row-bottom-height;
-
-	// others
-	$desktop-width: 1024px;
-	$section-padding-top: 8px;
-	$section-header-height: 24px;
-	$section-header-margin-bottom: 10px;
 
 	background-color: $color-dark-blue-gray;
 	box-sizing: border-box;
@@ -48,6 +11,10 @@
 		box-sizing: inherit;
 	}
 
+	.row {
+		margin-bottom: 15px;
+	}
+
 	// we should have class that removes defaults from UL
 	ul {
 		list-style-type: none;
@@ -55,29 +22,18 @@
 		margin: 0;
 	}
 
-	// main title and license
-	&__header-wrapper {
-		display: block;
-		width: 100%;
+	&__main {
+		margin: 0 20px;
 	}
 
 	&__header {
-		align-items: center;
-		display: flex;
-		justify-content: center;
-		margin: 0;
+		padding: 25px 0;
 	}
 
 	&__licensing-and-vertical {
-		align-items: center;
 		background: rgba($color-night-sky, .5);
-		color: $color-white;
-		display: flex;
 		font-size: $typescale-size-minus-2;
-		justify-content: center;
-		line-height: $line-height;
-		min-height: 50px;
-		padding: 16px 20px;
+		padding: 15px 0;
 
 		/**
 		 * Note: The following rule is an exception on DS Class Naming because whole
@@ -104,8 +60,7 @@
 		width: 67px;
 
 		&.is-large {
-			height: $international-logo-height;
-			padding: 0;
+			height: 32px;
 			width: 84px;
 		}
 	}
@@ -117,7 +72,6 @@
 			top: 1px solid $color-blue-gray;
 		}
 		color: #7f90a1;
-		display: block;
 		letter-spacing: 0.5px;
 		font: {
 			size: $typescale-size-minus-2;
@@ -132,32 +86,9 @@
 		white-space: nowrap;
 	}
 
-	// main content
-	&__main {
-		display: flex;
-		flex: {
-			direction: column;
-			wrap: wrap;
-		}
-	}
-
-	// left (Fandom) and right (Wikia) header and sections
-	&__fandom-header,
-	&__wikia-header {
-		margin: 0;
-	}
-
-	&__fandom-sections,
-	&__wikia-sections {
-		display: flex;
-		flex-wrap: wrap;
-	}
-
-	&__fandom-section,
 	&__wikia-section {
 		border-top: $section-line-width solid $color-slate-gray;
-		margin-right: 55px;
-		padding-top: $section-padding-top;
+		padding-top: 8px;
 	}
 
 	&__link {
@@ -176,11 +107,8 @@
 		}
 	}
 
-	&__fandom-section{
+	&__fandom-section {
 		&.is-fandom-overview {
-			border: 0;
-			padding: 0;
-
 			.global-footer__link {
 				align-items: center;
 				border-top: $section-line-width solid $color-slate-gray;
@@ -214,20 +142,9 @@
 		}
 
 		&.is-follow-us {
-			.global-footer__links-list {
-				display: flex;
-				flex-wrap: nowrap;
-			}
-
-			.global-footer__link {
-				$social-icon-size: 24px;
-
-				background: no-repeat center;
-				background-size: $social-icon-size;
+			.global-footer__links-list-item {
 				display: inline-block;
-				height: $social-icon-size;
-				margin-right: 20px;
-				width: $social-icon-size;
+				margin-right: 10px;
 			}
 		}
 	}
@@ -256,10 +173,6 @@
 		}
 
 		&.is-community-apps {
-			.global-footer__links-list {
-				display: flex;
-			}
-
 			.global-footer__link {
 				display: block;
 				line-height: normal;
@@ -280,9 +193,9 @@
 			size: $typescale-size-plus-1;
 			weight: bold;
 		}
-		height: $section-header-height;
+		height: 24px;
 		margin: {
-			bottom: $section-header-margin-bottom;
+			bottom: 10px;
 			top: 0;
 		}
 		padding: 0;
@@ -297,201 +210,17 @@
 	}
 
 	@media #{$breakpoint-mobile-only} {
-		&__main {
-			margin: 0 20px;
-		}
-
-		&__header-wrapper {
-			padding: {
-				bottom: $mobile-row-header-international-padding-bottom;
-				top: $mobile-row-header-international-padding-top;
-			}
-		}
-
-		&__fandom-header {
-			margin: {
-				bottom: $mobile-row-header-en-margin-bottom;
-				top: $mobile-row-header-en-fandom-margin-top;
-			}
-		}
-
-		&__wikia-header {
-			margin: {
-				bottom: $mobile-row-header-en-margin-bottom;
-				top: $mobile-row-header-en-wikia-margin-top;
-			}
-		}
-
-		// left (Fandom) and right (Wikia) sections
-		&__fandom-section,
-		&__wikia-section {
-			margin: 0;
-			width: 100%;
-		}
-
-		&__fandom-section {
-			&.is-fandom-overview {
-				.global-footer__links-list-item {
-					margin-bottom: 0;
-				}
-			}
-
-			&.is-follow-us {
-				.global-footer__links-list-item {
-					margin-bottom: 0;
-				}
-
-				.global-footer__link {
-					height: 42px;
-					margin-right: 10px;
-					width: 42px;
-				}
-			}
+		&__fandom-header,
+		&__wikia-header{
+			margin: 35px;
 		}
 
 		&__wikia-section {
 			margin-bottom: 20px;
-
-			&.is-company-overview {
-				width: 50%;
-			}
-
-			&.is-site-overview {
-				padding-top: $section-padding-top + $section-header-height + $section-header-margin-bottom;
-				width: 50%;
-			}
-
-			&.is-create-wiki {
-				display: none;
-			}
-
-			&.is-community-apps {
-				.global-footer__links-list {
-					margin-top: 5px;
-					margin-bottom: 0;
-				}
-
-				.global-footer__link {
-					margin-right: 25px;
-				}
-			}
 		}
 
-		&.is-international {
-			.global-footer__fandom-section.is-follow-us {
-				margin-bottom: 37px;
-			}
-		}
-
-		&__links-list-item {
-			margin-bottom: 10px;
-		}
-
-		&__licensing-and-vertical {
-			text-align: center;
-		}
-	}
-
-	@media #{$breakpoint-desktop-up} {
-		&__main {
-			margin: 0 auto;
-			width: $desktop-width;
-		}
-
-		// main content
-		&.is-en {
-			.global-footer__main {
-				height: $desktop-en-sections-height;
-			}
-		}
-
-		&.is-international {
-			.global-footer__main {
-				height: $desktop-international-sections-height;
-			}
-		}
-
-		&__header-wrapper {
-			padding: {
-				bottom: $desktop-row-header-international-padding-bottom;
-				top: $desktop-row-header-international-padding-top;
-			}
-		}
-
-		// left (Fandom) and right (Wikia) headers and sections
-		&__fandom-header,
-		&__wikia-header {
-			height: $en-logo-height;
-			margin: {
-				bottom: $desktop-row-header-en-margin-bottom;
-				top: $desktop-row-header-en-margin-top;
-			}
-		}
-
-		&__fandom-header {
-			width: $desktop-column-fandom;
-		}
-
-		&__fandom-sections {
-			flex-direction: column;
-			height: $desktop-row-top-height + $desktop-row-bottom-height;
-			width: $desktop-column-fandom;
-		}
-
-		&__wikia-header {
-			width: $desktop-column-wikia;
-		}
-
-		&__wikia-sections {
-			flex-direction: column;
-			height: $desktop-row-top-height + $desktop-row-bottom-height;
-			width: $desktop-column-wikia;
-		}
-
-		// items in Fandom section
-		&__fandom-section {
-			width: $desktop-first-column-width;
-		}
-
-		// items in Wikia section
-		&__wikia-section {
-			&.is-company-overview {
-				height: $desktop-row-top-height;
-				margin-right: 50px;
-				width: $desktop-second-column-width;
-			}
-
-			&.is-site-overview {
-				height: $desktop-row-bottom-height;
-				margin-right: 50px;
-				width: $desktop-second-column-width;
-			}
-
-			&.is-community {
-				height: $desktop-row-top-height;
-				width: $desktop-third-column-width;
-			}
-
-			&.is-create-wiki {
-				height: $desktop-row-bottom-height;
-				display: block;
-				width: $desktop-third-column-width;
-			}
-
-			&.is-community-apps {
-				height: $desktop-row-top-height;
-				width: $desktop-fourth-column-width;
-
-				.global-footer__links-list {
-					flex-direction: column;
-					margin-top: 5px;
-				}
-			}
-
-			&.is-advertise {
-				height: $desktop-row-bottom-height;
-				width: $desktop-fourth-column-width;
-			}
+		.is-create-wiki {
+			display: none;
 		}
 	}
 }
