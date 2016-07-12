@@ -18,8 +18,8 @@
 	// we should have class that removes defaults from UL
 	ul {
 		list-style-type: none;
-		padding: 0;
 		margin: 0;
+		padding: 0;
 	}
 
 	&__main {
@@ -138,6 +138,7 @@
 
 	&__wikia-section {
 		border-top: $section-line-width solid $color-slate-gray;
+		margin-bottom: 20px;
 		padding-top: 8px;
 
 		&.is-community-apps {
@@ -199,7 +200,9 @@
 
 	&__licensing-and-vertical {
 		background: rgba($color-night-sky, .5);
+		display: flex;
 		font-size: $typescale-size-minus-2;
+		justify-content: center;
 		padding: 15px 0;
 
 		/**

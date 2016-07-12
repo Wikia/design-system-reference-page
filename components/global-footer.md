@@ -177,7 +177,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="global-footer__licensing-and-vertical row center-xs">
+		<div class="global-footer__licensing-and-vertical">
 			<span>Community is powered by "Vertical". Content is available under <a href="#">CC-BY-SA</a>.</span>
 		</div>
 	</footer>
@@ -340,7 +340,7 @@
 			</div>
 		</div>
 
-		<div class="global-footer__licensing-and-vertical row center-xs">
+		<div class="global-footer__licensing-and-vertical">
 			<span>Community is powered by "Vertical". Content is available under <a href="#">CC-BY-SA</a>.</span>
 		</div>
 	</footer>
