@@ -24,30 +24,14 @@
 
 	&__main {
 		margin: 0 20px;
+		padding-top: 20px;
 	}
 
 	&__header {
+		align-items: center;
+		display: flex;
+		justify-content: center;
 		padding: 25px 0;
-	}
-
-	&__licensing-and-vertical {
-		background: rgba($color-night-sky, .5);
-		font-size: $typescale-size-minus-2;
-		padding: 15px 0;
-
-		/**
-		 * Note: The following rule is an exception on DS Class Naming because whole
-		 * text is user-supplied and we don't insert class names there.
-		 */
-		a,
-		a:visited {
-			color: $color-light-blue;
-			text-decoration: none;
-		}
-
-		a:hover {
-			color: $color-white;
-		}
 	}
 
 	&__fandom-logo {
@@ -86,11 +70,6 @@
 		white-space: nowrap;
 	}
 
-	&__wikia-section {
-		border-top: $section-line-width solid $color-slate-gray;
-		padding-top: 8px;
-	}
-
 	&__link {
 		&,
 		&:active,
@@ -107,70 +86,59 @@
 		}
 	}
 
-	&__fandom-section {
-		&.is-fandom-overview {
-			.global-footer__link {
-				align-items: center;
-				border-top: $section-line-width solid $color-slate-gray;
-				color: $color-white;
-				display: flex;
-				font: {
-					size: $typescale-size-plus-1;
-					weight: bold;
-				}
-				justify-content: space-between;
-				margin: 0;
-				padding: 2px 0 28px 0;
-				text-decoration: none;
+	&__fandom-link {
+		align-items: center;
+		border-top: $section-line-width solid $color-slate-gray;
+		color: $color-blue-gray;
+		display: flex;
+		font: {
+			size: $typescale-size-plus-1;
+			weight: bold;
+		}
+		justify-content: space-between;
+		line-height: 2em;
+		margin: 0;
+		padding: 2px 0 28px 0;
+		text-decoration: none;
 
-				&.is-games {
-					border-color: $color-games;
-				}
-
-				&.is-movies {
-					border-color: $color-movies;
-				}
-
-				&.is-tv {
-					border-color: $color-tv;
-				}
-			}
-
-			.global-footer__image {
-				transform: rotate(180deg);
-			}
+		&.is-games {
+			border-color: $color-games;
 		}
 
-		&.is-follow-us {
-			.global-footer__links-list-item {
-				display: inline-block;
-				margin-right: 10px;
-			}
+		&.is-movies {
+			border-color: $color-movies;
+		}
+
+		&.is-tv {
+			border-color: $color-tv;
+		}
+
+		&:hover {
+			color: $color-white;
 		}
 	}
 
-	&__wikia-section {
-		&.is-create-wiki {
-			.global-footer__link {
-				border: solid 1px $color-blue-gray;
-				color: $color-blue-gray;
-				display: inline-block;
-				font: {
-					size: $typescale-size-minus-2;
-					weight: bold;
-				}
-				letter-spacing: 0.3px;
-				line-height: normal;
-				margin-top: 13px;
-				padding: 14px 18px;
-				text-decoration: none;
-				text-transform: uppercase;
+	&__arrow {
+		color: $color-blue-gray;
+		transform: rotate(180deg);
+	}
 
-				&:hover {
-					color: $color-white;
-				}
-			}
+	&__social-icon {
+		color: #656e78;
+
+		&:hover {
+			color: $color-white;
 		}
+	}
+
+	&__social-item {
+		display: inline-block;
+		margin-right: 4px;
+	}
+
+	&__wikia-section {
+		border-top: $section-line-width solid $color-slate-gray;
+		padding-top: 8px;
 
 		&.is-community-apps {
 			.global-footer__link {
@@ -209,10 +177,54 @@
 		padding: 0;
 	}
 
+	&__button {
+		border: solid 1px $color-blue-gray;
+		color: $color-blue-gray;
+		display: inline-block;
+		font: {
+			size: $typescale-size-minus-2;
+			weight: bold;
+		}
+		letter-spacing: 0.3px;
+		line-height: normal;
+		margin-top: 13px;
+		padding: 14px 18px;
+		text-decoration: none;
+		text-transform: uppercase;
+
+		&:hover {
+			color: $color-white;
+		}
+	}
+
+	&__licensing-and-vertical {
+		background: rgba($color-night-sky, .5);
+		font-size: $typescale-size-minus-2;
+		padding: 15px 0;
+
+		/**
+		 * Note: The following rule is an exception on DS Class Naming because whole
+		 * text is user-supplied and we don't insert class names there.
+		 */
+		a,
+		a:visited {
+			color: $color-light-blue;
+			text-decoration: none;
+		}
+
+		a:hover {
+			color: $color-white;
+		}
+	}
+
 	@media #{$breakpoint-mobile-only} {
+		&__main {
+			padding-top: 0;
+		}
+
 		&__fandom-header,
 		&__wikia-header{
-			margin: 35px;
+			margin: 30px 0;
 		}
 
 		&__wikia-section {
@@ -221,6 +233,10 @@
 
 		.is-create-wiki {
 			display: none;
+		}
+
+		&__social-item {
+			margin-right: 10px;
 		}
 	}
 }

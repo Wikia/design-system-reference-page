@@ -6,7 +6,7 @@
     link(rel='stylesheet' href='./styleguide/styleguide.css')
     link(rel='stylesheet' href='./styleguide/custom-preview-elements.css')
     link(rel='stylesheet' href='./styleguide/global-footer.css')
-    link(rel='stylesheet' href='./bower_components/flexboxgrid/dist/flexboxgrid.min.css')
+    link(rel='stylesheet' href='./bower_components/flexboxgrid/css/flexboxgrid.min.css')
     link(rel='stylesheet' href='./www/index.css')
     script(src='./styleguide/styleguide.js')
 
