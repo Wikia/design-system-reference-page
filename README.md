@@ -68,3 +68,6 @@ Tests are started on every push to the repo and if they fail on your branch you 
 
 1. Jenkins workspace where you can see screenshots before and after the change and their diffs.
 1. Jenkins job that will update the baseline on your branch. Run it when you're sure that the changes were correct.
+
+## Copyright and License
+Code and documentation copyright 2016 Wikia, Inc. Code released under the [the GNU GPL v3 license](https://github.com/Wikia/design-system-reference-page/blob/master/LICENSE.md).
