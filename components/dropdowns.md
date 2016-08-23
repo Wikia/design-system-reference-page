@@ -1,18 +1,20 @@
 ###Dropdowns:
 
 	@example
-	<h4>Standard Light</h4>
-	<div class="wds-dropdown-toggle">
-		<span>Click and hold to activate</span>
-		<div class="wds-standard-dropdown wds-light">
-			Content
+	<div class="dropdown-preview">
+		<h4>Light</h4>
+		<div class="wds-dropdown-toggle wds-is-active">
+			<div class="wds-dropdown">
+				Dropdown content
+			</div>
 		</div>
 	</div>
 
-	<h4>Standard Dark</h4>
-		<div class="wds-dropdown-toggle">
-		<span>Click and hold to activate</span>
-		<div class="wds-standard-dropdown wds-dark">
-			Content
+	<div class="dropdown-preview">
+		<h4>Dark</h4>
+		<div class="wds-dropdown-toggle wds-is-active">
+			<div class="wds-dropdown wds-is-dark">
+				Dropdown content
+			</div>
 		</div>
 	</div>

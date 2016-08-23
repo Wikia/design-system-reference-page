@@ -290,6 +290,13 @@ code.sg:first-child {
 	padding: 5px;
 }
 
+.dropdown-preview {
+    display: inline-block;
+    height: 250px;
+    width: 150px;
+
+}
+
 /* Remove default body margin on the footer element */
 .wds-global-footer {
 	margin: 0 -8px;
@@ -349,18 +356,16 @@ code.sg:first-child {
 .wds-dropdown-toggle {
   display: inline-block;
   position: relative; }
+  .wds-dropdown-toggle.wds-is-active .wds-dropdown {
+    display: inline-block; }
 
-.wds-dropdown-toggle:active .wds-standard-dropdown {
-  display: inline; }
-
-.wds-standard-dropdown {
+.wds-dropdown {
   background-color: #fff;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
   display: none;
   position: absolute;
   z-index: 1; }
-  .wds-standard-dropdown.wds-light {
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2); }
-  .wds-standard-dropdown.wds-dark {
+  .wds-dropdown.wds-is-dark {
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3); }
 
 .wds-global-footer {
@@ -3983,34 +3988,38 @@ if(l)for(var p,h=0;l>h&&(p=s[h]);h++)a(p)?(u.push(this),c++,n()):(p.addEventList
       </div>
       <div class="sg-example">
         <div class="sg-canvas">
-          <h4>Standard Light</h4>
-          <div class="wds-dropdown-toggle">
-            <span>Click and hold to activate</span>
-            <div class="wds-standard-dropdown wds-light">
-              Content
+          <div class="dropdown-preview">
+            <h4>Light</h4>
+            <div class="wds-dropdown-toggle wds-is-active">
+              <div class="wds-dropdown">
+                Dropdown content
+              </div>
             </div>
           </div>
 
-          <h4>Standard Dark</h4>
-          <div class="wds-dropdown-toggle">
-            <span>Click and hold to activate</span>
-            <div class="wds-standard-dropdown wds-dark">
-              Content
+          <div class="dropdown-preview">
+            <h4>Dark</h4>
+            <div class="wds-dropdown-toggle wds-is-active">
+              <div class="wds-dropdown wds-is-dark">
+                Dropdown content
+              </div>
             </div>
           </div>
-        </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">h4</span>&gt;</span>Standard Light<span class="hljs-tag">&lt;/<span class="hljs-title">h4</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;wds-dropdown-toggle&quot;</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">span</span>&gt;</span>Click and hold to activate<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;wds-standard-dropdown wds-light&quot;</span>&gt;</span>
-    Content
+        </div><pre class="sg-code"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;dropdown-preview&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">h4</span>&gt;</span>Light<span class="hljs-tag">&lt;/<span class="hljs-title">h4</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;wds-dropdown-toggle wds-is-active&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;wds-dropdown&quot;</span>&gt;</span>
+      Dropdown content
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
 
-<span class="hljs-tag">&lt;<span class="hljs-title">h4</span>&gt;</span>Standard Dark<span class="hljs-tag">&lt;/<span class="hljs-title">h4</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;wds-dropdown-toggle&quot;</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">span</span>&gt;</span>Click and hold to activate<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;wds-standard-dropdown wds-dark&quot;</span>&gt;</span>
-    Content
+<span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;dropdown-preview&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">h4</span>&gt;</span>Dark<span class="hljs-tag">&lt;/<span class="hljs-title">h4</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;wds-dropdown-toggle wds-is-active&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">&quot;wds-dropdown wds-is-dark&quot;</span>&gt;</span>
+      Dropdown content
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></pre>
       </div>
